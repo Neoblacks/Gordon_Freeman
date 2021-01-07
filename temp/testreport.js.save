@@ -1,0 +1,35 @@
+const Discord = require("discord.js");
+const Report = require("../models/report.js");
+const  mongoose = require("mongoose");
+
+
+module.exports.run = async (bot, message, args) => {
+  await message.delete();
+//  if (message.author.id != "430310068605419522") return;
+
+  //mongoose.connect("mongodb+srv://Neoblacks:Rowena33@cluster0-h3cbs.mongodb.net/Reports");
+
+  let rUser = message.mentions.members.first();
+  if (!rUser) return message.channel.send("Je ne trouve pas d'utilisateur");
+  let rReason = args.slice(1).join(" ");
+  if (!rReason) return message.reply("La raison ?");
+
+  const report = new Report({
+    _id: mongoose.Types.ObjectId(),
+    username: rUser.user.username,
+    userID: rUser.id,
+    reason: rReason,
+    time: message.createdAt
+  });
+
+  report.save()
+  .then(result => console.log(result))
+  .catch(err => console.log(err));
+
+  message.channel.send("report enregistré dans la base de données.")
+
+}
+
+module.exports.help = {
+  name: "testreport"
+}
