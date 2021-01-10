@@ -3,7 +3,7 @@ const fs = module.require("fs");
 var mysql = require("mysql");
 const { stripIndents } = require("common-tags");
 const { getMember, formatDate } = require("../../functions.js");
-var con = mysql.createConnection({host:'localhost', user:'age', password:'thomb1997', database:'age'});
+var con = mysql.createConnection({host:'localhost', user:'SETUSER', password:'SETPSWD', database:'SETDATABASE'});
 
 module.exports = {
   name: "vieillesse",
