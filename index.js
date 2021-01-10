@@ -3,8 +3,6 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const DiscordAntiSpam = require("discord-anti-spam");
 var mysql = require("mysql");
-//var con = mysql.createConnection({host:'localhost', user:'lolFrAdmin', password:'jdSq4tuf8zR*', database:'Sanctions'});
-//
 // con.connect(function(err) {
 //   if (err) throw err;
 //   console.log("Connecté à la base de données");
