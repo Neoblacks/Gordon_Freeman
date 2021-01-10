@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
 var mysql = require("mysql");
-var con = mysql.createConnection({host:'localhost', user:'age', password:'thomb1997', database:'age'});
+var con = mysql.createConnection({host:'localhost', user:'SETUSER', password:'SETPSWD', database:'SETDATABASE'});
 // const Sanction = require("../models/sanction.js");
 
 module.exports = {
